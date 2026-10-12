@@ -27,6 +27,12 @@ export default async function TripPage({
       <h1>{trip.name}</h1>
       <p>Departs {trip.departs_on}</p>
       <TripPupilList tripId={trip.id} />
+      <a
+        className="button"
+        href={`/api/trips/${trip.id}/medical-export?email=${user.email}`}
+      >
+        Download medical sheet
+      </a>
     </main>
   );
 }
